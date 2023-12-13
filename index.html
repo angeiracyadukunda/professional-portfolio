@@ -13,12 +13,15 @@
     <!-- --------- FAVICON ---------- -->
     <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">
 
-    <title>Portfolio | Ludiflex</title>
+    <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    
+    
    <div class="container">
     <!-- --------------- HEADER --------------- -->
+    <script src="./script.js"></script>
       <nav id="header">
         <div class="nav-logo">
             <p class="nav-name">Ange</p>
@@ -42,6 +45,16 @@
                     <a href="#contact" class="nav-link">Contact</a>
                     <div class="circle"></div>
                 </li>
+
+                <li class="nav_list">
+                    <a href="#Testimonnial" class="nav-link">Testimonial</a>
+                    <div class="circle"></div>
+                </li>
+
+                <li class="nav_list">
+                    <a href="#Check Today's Weather" class="nav-link">Check Today's Weather</a>
+                    <div class="circle"></div>
+                </li>
             </ul>
         </div>
         <div class="nav-button">
@@ -51,10 +64,11 @@
             <i class="uil uil-bars" onclick="myMenuFunction()"></i>
         </div>
       </nav>
-      <script src="./script.js"></script>
+      
 
 
     <!-- -------------- MAIN ---------------- -->
+    
     <main class="wrapper">
        <!-- -------------- FEATURED BOX ---------------- -->
        <section class="featured-box" id="home">
@@ -83,7 +97,7 @@
           </div>
           <div class="featured-image">
             <div class="image">
-                <img src="assets/images/avatar.png" alt="avatar">
+                <img src="./images/profile.jpg" alt="avatar">
             </div>
           </div>
           <div class="scroll-icon-box">
@@ -209,6 +223,131 @@
              </div>
           </div>
        </section>
+                        <!----------------WEATHER APP  -->
+       <section class="section" id="Check Today's Weather">
+        <div class="top-header">
+            <h1>See Today's weather</h1>
+            </div>
+        
+       <div class="card">
+        <div class="search">
+            <input type="text" placeholder="enter city name"
+            spellcheck="false">
+            <button> <img src="images/search.png"></button>
+        </div>
+
+            <div class="Weather">
+                <img src="images/rain.png" class="weather-icon">
+                <h1 class="temp">22°C </h1>
+                <h2 class="city">New York</h2>
+                <div class="details">
+                    <div class="col">
+                        <img src="images/humidity.png">
+                        <div>
+                            <p class="humidity">50%</p>
+                            <p>Humidity</p>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <img src="images/wind.png">
+                        <div>
+                            <p class="wind">15km/h</p>
+                            <p>Wind Speed</p>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+       </div>
+       <script>
+
+const  apiKey ="4c29eff310e93249fb0c7291f5a25083"
+const apiUrl ="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
+
+const searchBox=document.querySelector(".search input");
+const searchBtn=document.querySelector(".search button");
+
+
+async function checkWeather(city){
+  const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+
+  if(response.status == 404){
+    document.querySelector(".error").style.display = "block";
+    document.querySelector(".wheather").style.display = "none";
+  }else{
+    var data = await response.json();
+  
+  
+
+    // console.log(data);
+
+    document.querySelector(".city").innerHTML = data.name;
+    document.querySelector(".temp").innerHTML =  Math.round (data.main.temp) + "°C";
+    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
+    document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
+
+    if (data.weather[0].main == "Clouds") {
+      weatherIcon.src = "images/clouds.png";
+    }
+   else if (data.weather[0].main == "Clear") {
+      weatherIcon.src = "images/clear.png";
+    } 
+    else if (data.weather[0].main == "Rain") {
+      weatherIcon.src = "images/rain.png";
+    } 
+    else if (data.weather[0].main == "Drizzle") {
+      weatherIcon.src = "images/drizzle.png";
+    }
+     else if (data.weather[0].main == "Mist") {
+      weatherIcon.src = "images/mist.png";
+    }
+
+  document.querySelector(".wheather").style.display = "block";
+  document.querySelector(".error").style.display = "none";
+  }
+}
+
+searchBtn.addEventListener("click", () => {
+checkWeather(searchBox.value);
+})
+       </script>
+
+       </section>
+       <!---------------------- TESTIMONIAL -------------------------->
+
+       <section  class="section" id="Testimonnial">
+                        <div class="top-header">
+                        <h1>Testimonial</h1>
+                        </div>
+       
+                    <div id="testimonial-container">
+                        
+                        <div class="testimonial">
+                          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                          <p><strong>Carine</strong></p>
+                        </div>
+                    
+                        <div class="testimonial">
+                          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                          <p><strong>shumbusho</strong></p>
+                        </div>
+
+                        <div class="testimonial ">
+                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                            <p><strong>Aline</strong></p>
+                          </div>
+                      
+                          <div class="testimonial">
+                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                            <p><strong>peggy</strong></p>
+                          </div>
+                        </div>
+                 
+
+                        
+
+       </section>
 
     </main>
 
@@ -229,9 +368,21 @@
                 <li class="footer_menu_list">
                     <a href="#projects">Projects</a>
                 </li>
+
                 <li class="footer_menu_list">
                     <a href="#contact">Contact</a>
                 </li>
+
+                <li class="footer_menu_list">
+                    <a href="#projects">Testimonial</a>
+                </li>
+               
+
+                <li class="footer_menu_list">
+                    <a href="#projects">weather</a>
+                </li>
+
+                
             </ul>
         </div>
         <div class="footer-social-icons">
@@ -258,5 +409,6 @@
 
     <!-- ----- MAIN JS ----- -->
     <script src="assets/js/main.js"></script>
+</div>
 </body>
 </html>
