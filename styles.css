@@ -244,9 +244,9 @@ a{
     overflow: hidden;
     animation: imgFloat 7s ease-in-out infinite;
 }
-.image img{
+.image img {
     width: 380px;
-    height: 380px;
+    height: 499px;
     object-fit: cover;
 }
 @keyframes imgFloat {
@@ -638,4 +638,166 @@ footer{
     .input-field{
         width: 100%;
     }
+}
+
+
+
+/* WEATHER APP CSS */
+
+.card{
+    width: 90%;
+    max-width: 470px;
+    background-color: #00c9ff;
+    columns: #4b4040;
+    margin: -75x auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
+    text-align: center;
+}
+
+.search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search input {
+    border: 0;
+    outline: 0;
+    background-color:rgb(255 255 255);
+    color: #555;
+    padding: 10px 25px;
+    height: 60px;
+    border-radius: 30px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+
+}
+
+.search button {
+    border: 0;
+    outline: 0;
+    background-color:rgb(0, 201, 255);
+    color: #555;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.search button  img{
+    width: 16px;
+    
+}.weather-icon{
+    width: 170;
+    margin-top: 30px;
+}
+.weather h1{
+    font-size: 80px;
+    font-weight: 500;
+}
+
+.weather h2{
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -10px;
+}
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px ;
+    margin-top: 50px;
+
+}
+.col{
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+.col img{
+    width: 40px;
+    margin-right:10px;
+}
+.humidity, .wind{
+    font-size: 28px;
+    margin-top: -6px;
+}
+
+/*  testimonial  */
+
+#testimonial-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap:3em;
+   
+}
+
+.testimonial{
+    position: relative;
+    align-items: center;
+    padding-block: 30px 70px;
+    padding-inline: 20px;
+    width: 100%;
+    background: var(--color-white);
+    box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
+    border-radius: 20px;
+    color: #777;
+}
+
+
+/* LOGIN WITH POPUP */
+.container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background-color: #f1f1f1;
+    border: 1px solid #ccc;
+    z-index: 1;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
 }
