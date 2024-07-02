@@ -15,6 +15,7 @@
 
     <title>Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 </head>
 <body>
     
@@ -51,14 +52,10 @@
                     <div class="circle"></div>
                 </li>
 
-                <li class="nav_list">
-                    <a href="#Check Today's Weather" class="nav-link">Check Today's Weather</a>
-                    <div class="circle"></div>
-                </li>
             </ul>
         </div>
         <div class="nav-button">
-            <button class="btn"><a href="https://docs.google.com/document/d/1MiMZWum5FZtKOe2ob2IyX2u2bLLf8Aorptodr8nzpd4/edit "download>Download CV</a> <i class="uil uil-file-alt"></i></button>
+            <button class="btn"><a target="_blank" href="https://drive.google.com/file/d/1x3ktB8YVM6bPX-S3MqseTFJ7ukQtYopU/view?usp=sharing">Download CV</a> <i class="uil uil-file-alt"></i></button>
         </div>
         <div class="nav-menu-btn">
             <i class="uil uil-bars" onclick="myMenuFunction()"></i>
@@ -89,10 +86,10 @@
                 <button class="btn">Download CV <i class="uil uil-file-alt"></i></button>
             </div>
             <div class="social_icons">
-                <div class="icon"><a href=""><i class="uil uil-instagram"></i></a></div>
-                <div class="icon"><a href="https://www.linkedin.com/in/angelique-iracyadukunda-437395294/"><i class="uil uil-linkedin-alt"></i></a></div>
-                <div class="icon"><a href="https://dribbble.com/angeiracya"><i class="uil uil-dribbble"></i></a></div>
-                <div class="icon"><a href="https://github.com/angeiracyadukunda"><i class="uil uil-github-alt"></i></a></div>
+                <div class="icon"><a target="_blank" href="https://www.instagram.com/ange___era?igsh=Y3pkZHhrN3Y3aHlh"><i class="uil uil-instagram"></i></a></div>
+                <div class="icon"><a target="_blank" href="https://www.linkedin.com/in/angelique-iracyadukunda-437395294/"><i class="uil uil-linkedin-alt"></i></a></div>
+                <div class="icon"><a target="_blank" href="https://dribbble.com/angeiracya"><i class="uil uil-dribbble"></i></a></div>
+                <div class="icon"><a target="_blank" href="https://github.com/angeiracyadukunda"><i class="uil uil-github-alt"></i></a></div>
             </div>
           </div>
           <div class="featured-image">
@@ -123,7 +120,7 @@
                        WordPress.
                     </p>
                     <div class="about-btn">
-                        <button class="btn">Download CV <i class="uil uil-import"></i></button>
+                        <button class="btn"><a target="_blank" href="https://drive.google.com/file/d/1x3ktB8YVM6bPX-S3MqseTFJ7ukQtYopU/view?usp=sharing">Download CV <i class="uil uil-import"></i></a></button>
                     </div>
                 </div>
             </div>
@@ -135,11 +132,7 @@
                     <div class="skills-list">
                         <span>HTML</span>
                         <span>CSS</span>
-                        <!-- <span>Bootstrap</span> -->
-                        <span>JavaScript</span>
-                        <!-- <span>Vue</span> -->
-                        <!-- <span>React</span> -->
-                        <!-- <span>Angular</span> -->
+                       <span>JavaScript</span>
                     </div>
                 </div>
                 <div class="skills-box">
@@ -149,18 +142,17 @@
                     <div class="skills-list">
                         <span>PHP</span>
                         <span>JAVA</span>
-                        <!-- <span>Python</span> -->
-                        <!-- <span>C++</span> -->
+                        <span>PDO</span>
                     </div>
                 </div>
                 <div class="skills-box">
                     <div class="skills-header">
-                        <h3>Database</h3>
+                        <h3>DBMS</h3>
                     </div>
                     <div class="skills-list">
-                        <!-- <span>MySQL</span> -->
-                        <!-- <span>PostgreSQL</span> -->
+                        <span>MySQL</span>
                         <span>MongoDB</span>
+                        <span>SQLite</span>
                     </div>
                 </div>
             </div>
@@ -209,110 +201,21 @@
              </div>
              <div class="col">
                 <div class="form-control">
-                    <div class="form-inputs">
-                        <input type="text" class="input-field" placeholder="Name">
-                        <input type="text" class="input-field" placeholder="Email">
-                    </div>
-                    <div class="text-area">
-                        <textarea placeholder="Message"></textarea>
-                    </div>
-                    <div class="form-button">
-                        <button class="btn">Send <i class="uil uil-message"></i></button>
-                    </div>
+                    <form id="contactForm">
+                        <div class="form-inputs">
+                            <input type="text" class="input-field" placeholder="Name">
+                            <input type="email" class="input-field" placeholder="Email">
+                        </div>
+                        <div class="text-area">
+                            <textarea placeholder="Message"></textarea>
+                        </div>
+                        <div class="form-button">
+                            <button type="submit" id="sendButton" class="btn">Send <i class="uil uil-message"></i></button>
+                        </div>
+                    </form>
                 </div>
              </div>
           </div>
-       </section>
-                        <!----------------WEATHER APP  -->
-       <section class="section" id="Check Today's Weather">
-        <div class="top-header">
-            <h1>See Today's weather</h1>
-            </div>
-        
-       <div class="card">
-        <div class="search">
-            <input type="text" placeholder="enter city name"
-            spellcheck="false">
-            <button> <img src="images/search.png"></button>
-        </div>
-
-            <div class="Weather">
-                <img src="images/rain.png" class="weather-icon">
-                <h1 class="temp">22°C </h1>
-                <h2 class="city">New York</h2>
-                <div class="details">
-                    <div class="col">
-                        <img src="images/humidity.png">
-                        <div>
-                            <p class="humidity">50%</p>
-                            <p>Humidity</p>
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <img src="images/wind.png">
-                        <div>
-                            <p class="wind">15km/h</p>
-                            <p>Wind Speed</p>
-                        </div>
-                    </div>
-                   
-                </div>
-            </div>
-       </div>
-       <script>
-
-const  apiKey ="4c29eff310e93249fb0c7291f5a25083"
-const apiUrl ="https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
-
-const searchBox=document.querySelector(".search input");
-const searchBtn=document.querySelector(".search button");
-
-
-async function checkWeather(city){
-  const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-
-  if(response.status == 404){
-    document.querySelector(".error").style.display = "block";
-    document.querySelector(".wheather").style.display = "none";
-  }else{
-    var data = await response.json();
-  
-  
-
-    // console.log(data);
-
-    document.querySelector(".city").innerHTML = data.name;
-    document.querySelector(".temp").innerHTML =  Math.round (data.main.temp) + "°C";
-    document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-    document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
-
-    if (data.weather[0].main == "Clouds") {
-      weatherIcon.src = "images/clouds.png";
-    }
-   else if (data.weather[0].main == "Clear") {
-      weatherIcon.src = "images/clear.png";
-    } 
-    else if (data.weather[0].main == "Rain") {
-      weatherIcon.src = "images/rain.png";
-    } 
-    else if (data.weather[0].main == "Drizzle") {
-      weatherIcon.src = "images/drizzle.png";
-    }
-     else if (data.weather[0].main == "Mist") {
-      weatherIcon.src = "images/mist.png";
-    }
-
-  document.querySelector(".wheather").style.display = "block";
-  document.querySelector(".error").style.display = "none";
-  }
-}
-
-searchBtn.addEventListener("click", () => {
-checkWeather(searchBox.value);
-})
-       </script>
-
        </section>
        <!---------------------- TESTIMONIAL -------------------------->
 
@@ -324,23 +227,23 @@ checkWeather(searchBox.value);
                     <div id="testimonial-container">
                         
                         <div class="testimonial">
-                          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                          <p>"Working with Angelique IRACYADUKUNDA was an absolute pleasure. Her ability to understand our complex requirements and deliver a seamless, user-friendly solution was remarkable. The project management skills and technical expertise she exhibited were top-notch. We couldn't have asked for a better partner in innovation."</p>
                           <p><strong>Carine</strong></p>
                         </div>
                     
                         <div class="testimonial">
-                          <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                          <p><strong>shumbusho</strong></p>
+                          <p>"Angelique IRACYADUKUNDA played a pivotal role in the success of our IoT integration project. Her deep understanding of technology combined with a strategic approach helped us streamline our processes and significantly reduce operational costs. Her dedication and commitment to excellence were evident throughout the project."</p>
+                          <p><strong>Shumbusho</strong></p>
                         </div>
 
                         <div class="testimonial ">
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
+                            <p>"The expertise that Angelique IRACYADUKUNDA brought to our project was invaluable. From initial concept to final implementation, she provided insightful recommendations and delivered a solution that has transformed the way we operate. Her ability to effectively communicate complex ideas made the entire process smooth and efficient."</p>
                             <p><strong>Aline</strong></p>
                           </div>
                       
                           <div class="testimonial">
-                            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."</p>
-                            <p><strong>peggy</strong></p>
+                            <p>"Angelique IRACYADUKUNDA has been a fantastic collaborator. Her technical knowledge and problem-solving skills were instrumental in overcoming several challenges we faced. She consistently delivered high-quality work on time and within budget. I highly recommend Angelique IRACYADUKUNDA for any project requiring advanced technical expertise and innovative thinking."</p>
+                            <p><strong>Peggy</strong></p>
                           </div>
                         </div>
                  
@@ -376,20 +279,15 @@ checkWeather(searchBox.value);
                 <li class="footer_menu_list">
                     <a href="#projects">Testimonial</a>
                 </li>
-               
-
-                <li class="footer_menu_list">
-                    <a href="#projects">weather</a>
-                </li>
 
                 
             </ul>
         </div>
         <div class="footer-social-icons">
-            <div class="icon"><a href=""><i class="uil uil-instagram"></i></a></div>
-            <div class="icon"><a href="https://www.linkedin.com/in/angelique-iracyadukunda-437395294/"><i class="uil uil-linkedin-alt"></i></a></div>
-            <div class="icon"> <a href="https://dribbble.com/angeiracya"><i class="uil uil-dribbble"></i></a></div>
-            <div class="icon"> <a href="https://github.com/angeiracyadukunda"><i class="uil uil-github-alt"></i></a></div>
+            <div class="icon"><a target="_blank" href="https://www.instagram.com/ange___era?igsh=Y3pkZHhrN3Y3aHlh"><i class="uil uil-instagram"></i></a></div>
+            <div class="icon"><a target="_blank" href="https://www.linkedin.com/in/angelique-iracyadukunda-437395294/"><i class="uil uil-linkedin-alt"></i></a></div>
+            <div class="icon"> <a target="_blank" href="https://dribbble.com/angeiracya"><i class="uil uil-dribbble"></i></a></div>
+            <div class="icon"> <a target="_blank" href="https://github.com/angeiracyadukunda"><i class="uil uil-github-alt"></i></a></div>
         </div>
         <div class="bottom-footer">
             <p>Copyright &copy; <a href="#home" style="text-decoration: none;">Ange-Era</a> - All rights reserved</p>
@@ -399,6 +297,18 @@ checkWeather(searchBox.value);
     </div>
 
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+    document.getElementById('sendButton').addEventListener('click', function(event) {
+      event.preventDefault();
+      Swal.fire({
+        title: 'Success!',
+        text: 'Message successfully sent',
+        icon: 'success',
+        confirmButtonText: 'OK'
+      });
+    });
+  </script>
 
 
     <!-- ----- TYPING JS Link ----- -->
